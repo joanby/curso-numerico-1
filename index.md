@@ -2,7 +2,7 @@
 
 ### Con Juan Gabriel Gomila y Arnau Mir
 
-Materiales complementarios del curso disponible en`  [Udemy](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35).
+Materiales complementarios del curso disponible en   [Udemy](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35).
 
 Las matemáticas son necesarias en muchos aspectos de la tecnología del siglo XXI, sobretodo cuando se trata de temas como Machine Learning, Inteligencia Artificial o Data Science. En estas ramas, son muchos los algoritmos que se utilizan para optimizar y tener algoritmos robustos, pero pocas las personas que lo entienden. Nuestra trilogía de cursos de métodos numéricos ha llegado para darle un giro de 180 grados a esta forma de trabajar y a explicarte todo lo que necesitas saber sobre algoritmos, su validez, en cuánto se equivocan y cual es el pseudocódigo de los mismos para que los puedas programar en cualquier leguaje de programación. 
 
