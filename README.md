@@ -5,11 +5,11 @@
 
 Materiales del curso de [Métodos Numéricos con Python - Parte 1 Cálculo Numérico](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35) solamente disponible en Udemy.
 
-1. [Preliminares](https://joanby.github.io/curso-numerico-1/01Preliminares#1). 
-2. [Errores](https://joanby.github.io/curso-numerico-1/02Errores#1)
-3. [Aproximación de Ceros](https://joanby.github.io/curso-numerico-1/03Ceros#1)
-4. [Interpolación](https://joanby.github.io/curso-numerico-1/04Interpolacion#1)
-5. [Derivación e Integración numérica](https://joanby.github.io/curso-numerico-1/05DerivacionIntegracion#1)
+1. [Preliminares](https://joanby.github.io/curso-numerico-1/Teoria/01Preliminares#1). 
+2. [Errores](https://joanby.github.io/curso-numerico-1/Teoria/02Errores#1)
+3. [Aproximación de Ceros](https://joanby.github.io/curso-numerico-1/Teoria/03Ceros#1)
+4. [Interpolación](https://joanby.github.io/curso-numerico-1/Teoria/04Interpolacion#1)
+5. [Derivación e Integración numérica](https://joanby.github.io/curso-numerico-1/Teoria/05DerivacionIntegracion#1)
 
 Las matemáticas son necesarias en muchos aspectos de la tecnología del siglo XXI, sobretodo cuando se trata de temas como Machine Learning, Inteligencia Artificial o Data Science. En estas ramas, son muchos los algoritmos que se utilizan para optimizar y tener algoritmos robustos, pero pocas las personas que lo entienden. Nuestra trilogía de cursos de métodos numéricos ha llegado para darle un giro de 180 grados a esta forma de trabajar y a explicarte todo lo que necesitas saber sobre algoritmos, su validez, en cuánto se equivocan y cual es el pseudocódigo de los mismos para que los puedas programar en cualquier leguaje de programación. 
 
