@@ -1,0 +1,75 @@
+---
+title: "Problemas de Errores"
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+(@) Considerando el formato binario de $64$ bits, calcular el número decimal equivalente a los números siguientes:
+    a. $|0|\ 1001001100000000000000000000000000000000000000000000|\ 10000001010|$.
+    a. $|0|\ 0101001100000000000000000000000000000000000000000001|\ 01111111111|$
+    
+(@) Calcular los errores absoluto y relativo para las aproximaciones siguientes $\hat{x}$ de $x$:
+    a. $x=\pi$, $\hat{x}=\frac{22}{7}$.
+    a. $x=\mathrm{e}$, $\hat{x}=2.7183$.
+    a. $x=\sqrt{3}$, $\hat{x}=1.732$.
+
+(@) Realizar las operaciones siguientes de tres maneras: exactamente, cortando usando aritmética de $4$ dígitos significativos y redondeando usando aritmética de $4$ dígitos significativos. Comparar los errores relativos en las dos últimas maneras:
+    a. $\frac{2}{5}+\frac{1}{7}$.
+    a. $\left(\frac{1}{5}-\frac{2}{11}\right)-\frac{5}{9}$.
+
+(@) El número $\mathrm{e}$ se define como $\displaystyle\mathrm{e}=\sum_{n=0}^\infty \frac{1}{n!}$, con $0!=1$. Hallar los errores absoluto y relativo en la aproximación siguiente de $\mathrm{e}$: $\displaystyle\sum_{n=0}^6\frac{1}{n!}$.
+
+(@) Dada una ecuación de segundo grado $ax^2+bx+c=0$, para hallar sus raíces $x_{\pm}$, podemos usar las fórmulas siguientes:
+$$
+x_{\pm}=\frac{-b\pm\sqrt{b^2-4ac}}{2a},\quad x_{\pm}=\frac{-2c}{b\pm\sqrt{b^2-4ac}}.
+$$
+    a. Demostrar la equivalencia de las fórmulas anteriores.
+    a. Usando aritmética de $4$ dígitos significativos redondeando, resolver la ecuación de segundo grado 
+    $$
+    1.002 x^2+11.01 x+0.01265=0,
+    $$
+    usando la fórmula más conveniente, es decir, la que tenga menos error y calcular los errores absoluto y relativo cometidos.
+    
+(@) Calcular la velocidad de convergencia de las sucesiones siguientes:
+     a. $\displaystyle\lim_{n\to\infty}\sin\left(\frac{1}{n}\right)=0$.
+     a. $\displaystyle\lim_{n\to\infty}(\ln(n+1)-\ln(n))=0$.
+     
+(@) Calcular la velocidad de convergencia de las funciones siguientes cuando $h\to 0$:
+    a. $\displaystyle\lim_{h\to 0}\frac{\sin h}{h}=1.$
+    a. $\displaystyle\lim_{h\to 0}\frac{\sin h-h\cos h}{h}=0.$
+
+```{r,echo=FALSE}
+fib=function(n){
+ff=c(1,1)
+for (i in 1:(n-2)){
+  m=length(ff)
+  aux=ff[m]+ff[m-1]
+  ff=c(ff,aux)
+}
+return(ff)}
+
+```
+
+(@) Consideremos la sucesión de Fibonacci $F_{n+2}=F_{n+1}+F_n$, con $F_0=F_1=1$. Los primeros términos de dicha sucesión serán los siguientes:
+$$
+`r fib(10)`,\ldots
+$$
+Dicha sucesión $F_n$ puede escribirse explícitamente de la forma siguiente donde dicha fórmula puede demostrarse por inducción:
+$$
+F_n=\frac{1}{\sqrt{5}}\left[\left(\frac{1+\sqrt{5}}{2}\right)^n-\left(\frac{1-\sqrt{5}}{2}\right)^n\right].
+$$
+    a. Supongamos que tenemos $\sqrt{5}$ con un error absoluto acotado por $\mathrm{E}$. Usando la fórmula de propagación del error y suponiendo que no cometemos error en las operaciones aritméticas básicas (suma, resta, producto y división), estime en función de $\mathrm{E}$ el error absoluto que cometemos al aplicar la fórmula explícita anterior cuando calculamos $F_n$.
+    a. Supongamos ahora que usamos la fórmula recurrente $F_{n+2}=F_{n+1}+F_n$ y suponiendo que $F_0$ y $F_1$ tienen un error acotado por $\mathrm{E}$, estime el valor del error absoluto de $F_n$.
+    a. Considere $n=0,1,\ldots, 50$ y $E=0.000001$. 
+          - Calcule la sucesión $\hat{F}_n$ del apartado a), para $n=0,1,\ldots, 50$ suponiendo que $\sqrt{5}\approx 2.236069$ en el primer caso.
+        - Calcule la sucesión $\tilde{F}_n$ del apartado b), para $n=0,1,\ldots, 50$ suponiendo que $F_0=F_1=`r 1+ 0.000001`$ en el segundo caso. 
+        - Seguidamente haga un gráfico de los errores cometidos usando los dos métodos y comprueba qué método es el mejor.
+    a. ¿Podrías dar una explicación teórica al fenómeno observado en el paso anterior?
+    
+
+
+     

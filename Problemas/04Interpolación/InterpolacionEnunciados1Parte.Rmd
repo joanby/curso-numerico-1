@@ -1,0 +1,33 @@
+---
+title: "Problemas de interpolación.  \nPolinomios de Lagrange y método de Neville."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+(@) Sea la función $f(x)=\frac{\mathrm{e}^x}{\mathrm{e}^x+1}$.
+    a. Calcular los polinomios de Lagrange y el polinomio interpolador para la función  usando los nodos $x_0=-1$, $x_1=-0.5$, $x_2=0.5$ y $x_3=1$. 
+    a. Calcular el error cometido en el punto $x=0$. 
+    a. Acotar el error cometido para cualquier valor de $x$ en el intervalo $[-1,1]$.
+    
+(@) Demostrar que si $h>0$ y $i$ un valor entero,
+$$
+\max_{x\in [ih,(i+1)h]}|(x-ih)\cdot (x-(i+1)h)|=\frac{h^2}{4},\quad \max_{x\in [ih,(i+2)h]}|(x-ih)\cdot (x-(i+1)h) (x-(i+2)h)|=\frac{2h^3}{3\sqrt{3}}.
+$$
+
+(@) Usar el método de Neville para aproximar $\sqrt{5}$ con las funciones siguientes y nodos siguientes:
+    a. $f(x)=5^x$ con nodos $x_0=1,\ x_1=2,\ x_2=3,\ x_3=4$.
+    a. $f(x)=\sqrt{x}$ con nodos $x_0=0,\ x_1=1,\ x_2=4,\ x_3=9$.
+    a. Calcular los errores cometidos en los apartados anteriores.
+    
+(@) Supongamos que $x_j=j$, $j=0,1,2,3$ y sabemos que:
+$$
+P_{0,1}(x)=2x+1,\quad P_{0,2}(x)=x+1,\quad P_{1,2,3}(2.5)=3.
+$$
+Hallar $P_{0,1,2,3}(2.5)$.
+
+(@) Interpolación inversa. Sea $f\in {\cal C}^1$ una función de clase ${\cal C}^1$ con $f'(x)\neq 0$ para $x\in [a,b]$ y supongamos que $f$ tiene un cero $\hat{x}$ en $[a,b]$. Sea $x_0,x_1,\ldots,x_n$, $n+1$ números distintos en el intervalo $[a,b]$ con $f(x_k)=y_k$, $k=0,1,\ldots,n$. Una manera de aproximar $\hat{x}$ es construir el polinomio de interpolación de grado $n$ en los nodos $y_0,y_1,\ldots, y_n$ para $f^{-1}$. Como $y_k=f(x_k)$ y $0=f(\hat{x})$, tenemos que $f^{-1}(y_k)=x_k$ y $0=f^{-1}(\hat{x})$. Si iteramos dicho proceso para aproximar $f^{-1}(0)$ tenemos un método para hallar ceros de funciones denominado **interpolación inversa**.
+Usar el método de la **interpolación inversa** con una iteración para calcular una aproximación de la solución de la ecuación $x-\mathrm{e}^{-x}=0$ usando los nodos siguientes: $x_0=0.3$, $x_1=0.4$, $x_2=0.5$ y $x_3=0.6$.

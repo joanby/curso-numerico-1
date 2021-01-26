@@ -1,0 +1,37 @@
+---
+title: "Problemas de derivación e integración  \nIntegración numérica.  \nIntegración de Romberg.  \nIntegración gausiana."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+```{r,echo=FALSE}
+f = function(x){x*exp(-x)+log(x)}
+```
+
+(@) Aproxima la integral siguiente usando la fórmula compuesta de los trapecios y de Simpson acotando el error cometido con $h=0.1$:
+$$
+\int_0^2 \mathrm{e}^{-x^2}\, dx.
+$$
+
+
+(@) Queremos aproximar la integral del ejercicio anterior con un error menor que $10^{-6}$. Hallar el valor de $h$ y el número de nodos $n$ para la fórmula compuesta de los trapecios y de Simpson.
+
+(@) Usando integración de Romberg y $h=0.2$, aproxima la integral del ejercicio (1) con un error de orden $O(h^6)$ usando la fórmula compuesta de los trapecios.
+
+(@) Demostrar que si usamos la integración de Romberg usando la fórmula compuesta de los trapecios con $h$, el valor de $T_1(h)$ corresponde a la fórmula compuesta de Simpson con $\frac{h}{2}$.
+
+(@) Aplicar la fórmula de la cuadratura gausiana para aproximar la integral 
+$$
+\int_0^{2}\mathrm{e}^{\sin x}\, dx
+$$
+para $n=2,3,4$. Estimar el error cometido dando una cota del mismo.
+
+(@) Demostrar que si usamos una cuadratura del tipo
+$$
+Q(f)=\sum_{i=1}^n c_i f(x_i),
+$$
+para aproximar la integral $\displaystyle\int_a^b f(x)\, dx$ no puede tener grado de precisión mayor que $2n-1$ aunque se permita elegir los coeficientes $c_i$ y los nodos $x_i$.\newline Indicación: Construir una función $f$ que tenga como raíces dobles los nodos $x_i$.

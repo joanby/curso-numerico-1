@@ -1,0 +1,59 @@
+---
+title: ""
+output: pdf_document
+classoption: landscape
+geometry: "left=0.5cm,right=3cm,top=2cm,bottom=2cm"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r,echo=FALSE}
+f=function(x){x*sin(pi*x/2)}
+f.der=function(x){(pi*x/2)*cos(pi*x/2)+sin(pi*x/2)}
+x=c(0,1,3,5)
+y=f(x)
+y.der=f.der(x)
+z=rep(x,each=2)
+yz=f(z)
+n=length(x)
+Q=matrix(0,2*n,2*n)
+Q[,1]=yz
+for (i in 1:(n)){
+  Q[2*i,2]=y.der[i]
+  if(i!=1){
+    Q[2*i-1,2]=(Q[2*i-1,1]-Q[2*i-2,1])/(z[2*i-1]-z[2*i-2])
+  }
+}
+for (i in 3:(2*n)){
+  for (j in 3:i){
+    Q[i,j]=(Q[i,j-1]-Q[i-1,j-1])/(z[i]-z[i-j+1])
+  }
+}
+```
+
+
+\thispagestyle{empty}
+
+\large
+\begin{center}
+\begin{tabular}{llllllllll}
+$z_i$&$f(z_i)$&$f[z_i,z_{i+1}]$&orden $3$&orden $4$&orden $5$&orden $6$&orden $7$&orden $8$\\\hline
+$`r z[1]`$&$`r f(z[1])`$&&&&&&&\\
+&&$f'(`r z[1]`)=`r Q[2,2]`$&&&&&&\\
+$`r z[2]`$&$`r f(z[2])`$&&$\frac{`r Q[3,2]`-`r Q[2,2]`}{`r z[3]`-`r z[1]`}=`r Q[3,3]`$&&&&&\\
+&&$\frac{`r f(z[3])`-`r f(z[2])`}{`r z[3]`-`r z[2]`}=`r Q[3,2]`$&&$\frac{`r Q[4,3]`-`r Q[3,3]`}{`r z[4]`-`r z[1]`}=`r Q[4,4]`$&&&&\\
+$`r z[3]`$&$`r f(z[3])`$&&$\frac{`r Q[4,2]`-`r Q[3,2]`}{`r z[4]`-`r z[2]`}=`r Q[4,3]`$&&$\frac{`r Q[5,4]`-(`r Q[4,4]`)}{`r z[5]`-`r z[1]`}=`r round(Q[5,5],3)`$&&&\\
+&&$f'(`r z[3]`)=`r Q[4,2]`$&&$\frac{`r Q[5,3]`-`r Q[4,3]`}{`r z[5]`-`r z[2]`}=`r Q[5,4]`$&&$\frac{`r Q[6,5]`-`r Q[5,5]`}{`r z[6]`-`r z[1]`}=`r round(Q[6,6],3)`$&&\\
+$`r z[4]`$&$`r f(z[4])`$&&$\frac{`r Q[5,2]`-`r Q[4,2]`}{`r z[5]`-`r z[3]`}=`r Q[5,3]`$&&$\frac{`r Q[6,4]`-(`r Q[5,4]`)}{`r z[6]`-`r z[2]`}=`r Q[6,5]`$&&$\frac{`r Q[7,6]`-`r round(Q[6,6],3)`}{`r z[7]`-`r z[1]`}=`r round(Q[7,7],3)`$&\\
+&&$\frac{`r f(z[5])`-`r f(z[4])`}{`r z[5]`-`r z[4]`}=`r Q[5,2]`$&&$\frac{`r Q[6,3]`-(`r Q[5,3]`)}{`r z[6]`-`r z[3]`}=`r Q[6,4]`$&&$\frac{`r Q[7,5]`-`r Q[6,5]`}{`r z[7]`-`r z[2]`}=`r round(Q[7,6],3)`$&&$\frac{`r round(Q[8,7],3)`-(`r round(Q[7,7],3)`)}{`r z[8]`-`r z[1]`}=`r round(Q[8,8],6)`$\\
+$`r z[5]`$&$`r f(z[5])`$&&$\frac{`r Q[6,2]`-(`r Q[5,2]`)}{`r z[6]`-`r z[4]`}=`r Q[6,3]`$&&$\frac{`r Q[7,4]`-`r Q[6,4]`}{`r z[7]`-`r z[3]`}=`r Q[7,5]`$&&$\frac{`r Q[8,6]`-(`r round(Q[7,6],3)`)}{`r z[8]`-`r z[2]`}=`r round(Q[8,7],3)`$&\\
+&&$f'(`r z[5]`)=`r Q[6,2]`$&&$\frac{`r Q[7,3]`-`r Q[6,3]`}{`r z[7]`-`r z[4]`}=`r Q[7,4]`$&&$\frac{`r Q[8,5]`-(`r Q[7,5]`)}{`r z[8]`-`r z[3]`}=`r round(Q[8,6],3)`$&&\\
+$`r z[6]`$&$`r f(z[6])`$&&$\frac{`r Q[7,2]`-(`r Q[6,2]`)}{`r z[7]`-`r z[5]`}=`r Q[7,3]`$&&$\frac{`r Q[8,4]`-`r Q[7,4]`}{`r z[8]`-`r z[4]`}=`r Q[8,5]`$&&&\\
+&&$\frac{`r f(z[7])`-(`r f(z[6])`)}{`r z[7]`-`r z[6]`}=`r Q[7,2]`$&&$\frac{`r Q[8,3]`-`r Q[7,3]`}{`r z[8]`-`r z[5]`}=`r Q[8,4]`$&&&&\\
+$`r z[7]`$&$`r f(z[7])`$&&$\frac{`r Q[8,2]`-(`r Q[7,2]`)}{`r z[8]`-`r z[6]`}=`r Q[8,3]`$&&&&&\\
+&&$f'(`r z[7]`)=`r Q[8,2]`$&&&&&\\
+$`r z[8]`$&$`r f(z[8])`$&&&&&&\\
+\end{tabular}
+\end{center}

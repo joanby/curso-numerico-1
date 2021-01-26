@@ -1,0 +1,33 @@
+---
+title: "Problemas de Ceros.  \nMétodo de la bisección y método de punto fijo."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+(@) Usar el método de la bisección para hallar los ceros de las funciones siguientes en los intervalos indicados con un error menor que $\epsilon = 10^{-5}$. Hacerlo usando los dos criterios de parada vistos en los apuntes: (i) $|f(x_n)|\leq \epsilon$ y (ii) $|x_n-x_{n-1}|\leq \epsilon$.
+    * $f(x)=x-3^{-x}$, para $0\leq x\leq 1$.
+    * $f(x)=\mathrm{e}^x-x^2+2 x-3$, para $0\leq x\leq 2$.
+    
+(@) Usar el método de la bisección para hallar el primer cero $\hat{x}>0$ tal que $\tan x=x$. Calcularlo con un error menor que $\epsilon=0.0001$. Usar el criterio de parada $|x_n-x_{n-1}|\leq \epsilon$.
+
+(@) Queremos resolver la ecuación $f(x)=x^3-4x+1=0$ para $x$ entre $0$ y $1$. Para ello usamos el método del punto fijo $x_n=g_i(x_{n-1})$ con las funciones $g$ siguientes: (i) $g_1(x)=\frac{x^3+1}{4}$; (ii) $g_2(x)=\sqrt[3]{4x-1}$; (iii) $g_3(x)=\sqrt{4-\frac{1}{x}}$.
+    a) Demostrar que algebraicamente es equivalente que $x$ verifique que $f(x)=0$ a que $x$ verifique $x=g_i(x)$, con $i=1,2,3$.
+    b) Considerar $x_0=0.5$, ¿cuál de las sucesiones asociadas al método del punto fijo con $g=g_i$, $i=1,2,3$ converge a un cero de $f$ en el intervalo $[0,1]$.
+    c) ¿Podríais dar una explicación teórica a lo observado en el apartado anterior?
+
+(@) Para cada una de las ecuaciones siguientes, determinar el intervalo $[a,b]$ donde el método del punto fijo converge. Hallar el punto fijo con un error de $\epsilon =10^{-6}$ usando el criterio de parada $|x_n-x_{n-1}|\leq \epsilon$.
+    a) $x-\cos x=0$.
+    b) $x^2-\mathrm{e}^{\frac{x}{2}}=0$, donde $0<x<3$.
+    
+(@) Demostrar que si $A>0$ es un número real positivo, la sucesión definida por
+$$
+x_n=\frac{1}{2}x_{n-1}+\frac{A}{2x_{n-1}},\ n\geq 1,
+$$
+converge a $\sqrt{A}$ siempre que $x_0 >0$.\newline
+Indicación: Definir $g(x)=\frac{1}{2}x+\frac{A}{2x}$. Hallar un intervalo $[a,b]$ tal que si $x\in [a,b]$, entonces $g(x)\in [a,b]$. Probar con $[a,b]=\left[\sqrt{A},\infty\right)$. \newline
+Estudiar el caso $x_0<0$.
+    

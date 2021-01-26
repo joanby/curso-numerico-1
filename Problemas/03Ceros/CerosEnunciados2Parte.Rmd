@@ -1,0 +1,65 @@
+---
+title: "Problemas de Ceros.  \nMétodos de la secante, Newton-Raphson y regula-falsi.  \nOrden de convergencia. Ceros múltiples. Ceros de polinomios."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+(@) Usando los métodos de la secante, Newton-Raphson y regula-falsi, calcular el cero en el intervalo indicado de las funciones siguientes con un error $\epsilon =10^{-6}$ usando el criterio de parada $|x_n-x_{n-1}|\leq\epsilon$:
+    a) $f(x)=\mathrm{e}^x+2\cos x-7=0$, para $x$ en el intervalo $[2,3]$.
+    b) $f(x)=\ln x-\frac{1}{20}\mathrm{e}^x=0$, para $x$ en el intervalo $[1,2]$.
+
+(@) Usando las sucesiones generadas en el apartado b) del ejercicio anterior, estimar el orden de convergencia de los métodos de la secante, Newton-Raphson y regula-falsi.
+
+(@) Aplica el método de Newton-Raphson para resolver la ecuación $x^2\ln^2x-2x\ln x+1=0$, para $x>0$. 
+    * Estimar el orden de convergencia. ¿Tiene el orden de convergencia esperado? En caso negativo, ¿podéis dar una explicación del fenómeno?
+    * Modificar el método de Newton-Raphson para que tenga el orden de convergencia esperado.
+```{r,echo=FALSE}
+f=function(x){x^2*log(x)^2-2*x*log(x)+1}
+f1 = function(x){2*(1+log(x))*(-1+x*log(x))}
+xn=1
+n.iter = 20
+for (i in 1:n.iter){
+  n=length(xn)
+  x=xn[n]-f(xn[n])/f1(xn[n])
+  xn=c(xn,x)
+}
+xhat=xn[20]
+nn=10
+yn=log(abs(xn-xhat))[1:nn]
+yn1=yn[-1]
+yn1[nn]=log(abs(xn-xhat))[nn]
+estudi.reg=lm(yn1 ~yn)
+```
+
+(@) Sea $\hat{x}$ un cero de multiplicidad $m$ de la función $f$ que suponemos de clase ${\cal C}^{m+1}$. Usamos el siguiente método iterativo para hallar un cero de $f(x)=0$,
+$$
+x_n=x_{n-1}-\frac{m\cdot f(x_{n-1})}{f'(x_{n-1})}.
+$$
+    * ¿Cuál es el orden de convergencia del método anterior?
+    * Aplicar el método anterior al problema anterior y estimar el orden de convergencia hallado en el apartado anterior.
+
+(@) Aplicar los métodos de Aitken y Steffensen a la sucesión generada en el primer apartado del problema (3). Estimar los ordenes de convergencia de las sucesiones halladas.
+
+
+(@) Se dice que una sucesión $(x_n)_n$ es convergente en orden superlineal hacia $\hat{x}$ si
+$$
+\lim_{n\to\infty}\frac{|x_{n+1}-\hat{x}|}{|x_n-\hat{x}|}=0.
+$$
+    a. Demostrar que si $\displaystyle\lim_{n\to\infty}x_n=\hat{x}$ y y $(x_n)_n$ tiene orden de convergencia $\alpha$ con $\alpha >1$, entonces $(x_n)_n$ es convergente en orden superlineal hacia $\hat{x}$.
+    a. Demostrar que la sucesión $x_n=\frac{1}{n^n}$ es convergente en orden superlineal hacia $0$ pero no tiene orden de convergencia $\alpha$ para cualquier $\alpha >1$.
+    a. Demostrar que si $(x_n)_n$ es convergente en orden superlineal hacia $\hat{x}$, entonces:
+$$
+\lim_{n\to\infty}\frac{|x_{n+1}-x_n|}{|x_n-\hat{x}|}=1.
+$$
+
+(@) Calcular todos los ceros de los polinomios siguientes usando el método de Newton-Raphson, el método de Horner para evaluar la función y la derivada y el método de la deflación:
+    * $p(x)=x^3-5 x^2+5=0$.
+    * $p(x)=5 x^5-75 x^4+425 x^3-1125 x^2+1370 x-597$.
+
+(@) Usando el método de Müller, hallar todos los ceros del polinomio: $p(x)=x^3-5 x+10=0$.
+
+

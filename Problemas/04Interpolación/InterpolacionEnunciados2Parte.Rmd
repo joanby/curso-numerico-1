@@ -1,0 +1,69 @@
+---
+title: "Problemas de interpolación.  \nDiferencias divididas. Interpolación de Hermite.  \nSplines cúbicos."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+(@) Usando el método de las diferencias divididas, halla el polinomio de interpolación de la función $f(x)=\sin(\pi x)-x^2$ en los nodos $x_0=-2, x_1=-1, x_2=\frac{1}{2}, x_3=1, x_4=2$. Usar el polinomio anterior para hallar una aproximación de $\sin\left(\frac{\pi}{8}\right)$. Calcular una cota del error cometido al aproximar $f(x)$ por el polinomio de interpolación para $x$ en el intervalo $[-2,2]$.
+
+(@) La tabla siguiente corresponde a los valores de un polinomio de grado desconocido:
+```{r,echo=FALSE}
+x=c(0,1,2)
+y=c(2,-1,4)
+tabla=rbind(x,y)
+tabla=as.data.frame(tabla)
+colnames(tabla)=c()
+rownames(tabla)=c("$x$","$P(x)$")
+library(knitr)
+library(kableExtra)
+knitr::kable(tabla,format="latex",escape=FALSE,booktabs=T)  %>%
+  kable_styling(position = "center",latex_options = "basic")
+```
+Determina el coeficiente de $x^2$ en la expresión de $P(x)$ sabiendo que todas las diferencias divididas hacia adelante de tercer orden valen $1$.
+
+(@) Un polinomio de grado $4$ satisface lo siguiente:
+$$
+\Delta^4 P(0)=24, \quad \Delta^3 P(0)=6,\quad \Delta^2 P(0)=0,
+$$
+donde $\Delta P(x)=P(x+1)-P(x)$. Calcular $\Delta^2 P(10)$.
+
+(@) Sea $i_0,i_1,\ldots,i_n$ una permutación de la sucesión de enteros $0,1,\ldots,n$. Demostrar que:
+$$
+f[x_{i_0},x_{i_1},\ldots,x_{i_n}]=f[x_0,x_1,\ldots,x_n].
+$$
+Indicación: Considerar el coeficiente de grado mayor del $n$-ésimo polinomio interpolador para los datos $\{x_0,x_1,\ldots,x_n\}=\{x_{i_0},x_{i_1},\ldots,x_{i_n}\}$.
+
+(@) Usando el método de las diferencias divididas generalizadas, halla el polinomio de interpolación de Hermite de la función $f(x)=\sin(\pi x)-x^2$ en los nodos $x_0=-2, x_1=-1, x_2=\frac{1}{2}, x_3=1, x_4=2$. Usar el polinomio anterior para hallar una aproximación de $\sin\left(\frac{\pi}{8}\right)$.
+
+<!-- (@) Una coche viaja por una carretera recta. La tabla siguiente muestra los datos que se tomaron del coche para distintos instantes de tiempo en segundos, la distancia es en metros y la velocidad, en metros por segundo: -->
+<!-- ```{r,echo=FALSE} -->
+<!-- time=c(0,3,5,8,13) -->
+<!-- distance=c(0,225,383,623,993) -->
+<!-- speed=c(75,77,80,74,72) -->
+<!-- conv=0.3048 -->
+<!-- distance=round(conv*distance,2) -->
+<!-- speed=round(conv*speed,2) -->
+<!-- tabla=rbind(time,distance,speed) -->
+<!-- tabla=as.data.frame(tabla) -->
+<!-- colnames(tabla)=c() -->
+<!-- rownames(tabla)=c("Tiempo","Distancia","Velocidad") -->
+<!-- library(knitr) -->
+<!-- library(kableExtra) -->
+<!-- knitr::kable(tabla,format="latex",escape=FALSE)  %>% -->
+<!--   kable_styling(position = "center",latex_options = "basic") -->
+<!-- ``` -->
+<!--     a. Usar la interpolación de Hermite para estimar la posición y la velocidad del coche al cabo de $t=10$ segundos. -->
+<!--     a. Usar el polinomio interpolador de Hermite para averiguar si el coche excede la velocidad de `r round(1.60934*55,2)` km/h. -->
+<!--     a. ¿Cuál es la velocidad máxima estimada del coche para el intervalo de tiempo dado en la tabla? -->
+
+(@) Halla el spline cúbico natural que interpola la función $f(x)=\sin(\pi x)-x^2$ en los nodos $x_0=-2, x_1=-1, x_2=\frac{1}{2}, x_3=1, x_4=2$. Usar el polinomio anterior para hallar una aproximación de $\sin\left(\frac{\pi}{8}\right)$.
+
+
+
+(@) Repetir el ejercicio anterior pero ahora considerando un spline cúbico de frontera fija.
+
+(@) Demostrar que si $f(x)$ es un polinomio de grado $3$ y $S_c(x)$ es el spline cúbico de frontera fija interpolador de $f$ en unos ciertos nodos $x_i$, $i=0,\ldots,n$, para un cierto $n$, entonces $f(x)=S_c(x)$ para todo valor de $x$. ¿Es cierta la condición anterior si en lugar de considerar el spline cúbico de frontera fija, consideramos el spline cúbico natural?

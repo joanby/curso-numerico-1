@@ -1,0 +1,66 @@
+---
+title: "Problemas de derivación e integración  \nDerivación numérica  \nExtrapolación de Richardson."
+author: ""
+date: ""
+output:
+  pdf_document: default
+              
+  html_document: default
+---
+
+```{r,echo=FALSE}
+f = function(x){x*exp(-x)+log(x)}
+```
+
+(@) Completa la tabla siguiente usando las fórmulas de los tres puntos usando la del punto medio cuando sea posible:
+```{r,echo=FALSE}
+x=seq(from=0.8,to=1.3,by=0.1)
+y=round(f(x),3)
+yp=rep("",length(x))
+tabla=cbind(x,y,yp)
+tabla=as.data.frame(tabla)
+rownames(tabla)=c()
+colnames(tabla)=c("$x$","$f(x)$","$f'(x)$")
+library(knitr)
+library(kableExtra)
+knitr::kable(tabla,escape=FALSE)  %>%
+  kable_styling(position = "center")
+```
+
+(@) Usando los datos del ejercicio anterior completa la tabla siguiente hallando fórmulas para calcular $f''(x)$ de orden $O(h^k)$, con $k$ el más alto posible:
+```{r,echo=FALSE}
+x=seq(from=0.8,to=1.3,by=0.1)
+y=round(f(x),3)
+y2p=rep("",length(x))
+tabla=cbind(x,y,y2p)
+tabla=as.data.frame(tabla)
+rownames(tabla)=c()
+colnames(tabla)=c("$x$","$f(x)$","$f''(x)$")
+library(knitr)
+library(kableExtra)
+knitr::kable(tabla,escape=FALSE)  %>%
+  kable_styling(position = "center")
+```
+
+(@) Las tablas de los ejercicios anteriores corresponden a la función $f(x)=x\cdot\mathrm{e}^{-x}+\ln (x)$. Hallar una cota de los errores cometidos en los dos ejercicios en las aproximaciones usadas.
+
+(@) Sea $f(x)=x\cdot\mathrm{e}^{-x}+\ln (x)$. Definimos las aproximaciones siguientes para calcular $f'(1)$:
+$$
+f_n'=\frac{f(1+10^{-n})-f(1)}{10^{-n}},
+$$
+para $n=1,2,\ldots,20$.
+Haz un gráfico de los errores $e_n=|f_n'-f'(1)|$ en función de $n$ y hallar el valor de $n$ para el que dicho error es mínimo.
+
+(@) Usando extrapolación de Richardson, aproxima $f'(1)$ para $f(x)=x\cdot\mathrm{e}^{-x}+\ln (x)$ con error de orden $O(h^6)$ con $h=0.1$ usando la fórmula siguiente para aproximar $f'(x)$:
+$$
+f'(x)\approx \frac{f(x+h)-f(x-h)}{2h}.
+$$
+
+(@) 
+    a. Demostrar que 
+$$
+\lim_{h\to 0}\left(\frac{2+h}{2-h}\right)^{\frac{1}{h}}=\mathrm{e}.
+$$
+    a. Calcula aproximaciones de $\mathrm{e}$ usando la fórmula $N(h)=\left(\frac{2+h}{2-h}\right)^{\frac{1}{h}}$, para $h=0.04,0.02$ y $0.01$.
+    a. Suponga que $\mathrm{e}=N(h)+k_1 h^2+k_2 h^4+k_3 h^6+\cdots$. Usando extrapolación de Richardson, hallar una aproximación de $\mathrm{e}$ de orden $O(h^6)$ para $h=0.04$. ¿Crees que la suposición anterior es correcta? Razona la respuesta.\newline
+Indicación: observar que $N(-h)=N(h)$.
