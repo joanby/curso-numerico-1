@@ -5,6 +5,8 @@
 
 Materiales del curso de [Métodos Numéricos con Python - Parte 1 Cálculo Numérico](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35) solamente disponible en Udemy.
 
+Puedes consultar todo el material complementario del curso en nuestro [Github.io](https://joanby.github.io/curso-numerico-1/).
+
 1. [Preliminares](https://joanby.github.io/curso-numerico-1/Teoria/01Preliminares#1). 
 2. [Errores](https://joanby.github.io/curso-numerico-1/Teoria/02Errores#1)
 3. [Aproximación de Ceros](https://joanby.github.io/curso-numerico-1/Teoria/03Ceros#1)
