@@ -4,19 +4,11 @@
 
 Materiales complementarios del curso disponible en   [Udemy](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35).
 
-
-
-+ [Prerrequisitos del curso](https://joanby.github.io/probabilidad/Tema_0_Prerequisitos#1).  
-
-  + Problemas propuestos Tema Prerrequisitos [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema%200%20-%20Combinatoria.Rmd), [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria.pdf).
-  + Soluciones problemas propuestos Tema Prerrequisitos [Rmd](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.Rmd),  [Pdf](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.pdf),  [html](https://github.com/joanby/probabilidad/blob/master/ejercicios/Tema-0---Combinatoria_SOLUCIONES.html)
-
-
-1. [Preliminares](https://joanby.github.io/curso-numerico-1/01Preliminares#1). 
-2. [Errores](https://joanby.github.io/curso-numerico-1/02Errores#1)
-3. [Aproximación de Ceros](https://joanby.github.io/curso-numerico-1/03Ceros#1)
-4. [Interpolación](https://joanby.github.io/curso-numerico-1/04Interpolacion#1)
-5. [Derivación e Integración numérica](https://joanby.github.io/curso-numerico-1/05DerivacionIntegracion#1)
+1. [Preliminares](https://joanby.github.io/curso-numerico-1/Teoria/01Preliminares#1). 
+2. [Errores](https://joanby.github.io/curso-numerico-1/Teoria/02Errores#1)
+3. [Aproximación de Ceros](https://joanby.github.io/curso-numerico-1/Teoria/03Ceros#1)
+4. [Interpolación](https://joanby.github.io/curso-numerico-1/Teoria/04Interpolacion#1)
+5. [Derivación e Integración numérica](https://joanby.github.io/curso-numerico-1/Teoria/05DerivacionIntegracion#1)
 
 Las matemáticas son necesarias en muchos aspectos de la tecnología del siglo XXI, sobretodo cuando se trata de temas como Machine Learning, Inteligencia Artificial o Data Science. En estas ramas, son muchos los algoritmos que se utilizan para optimizar y tener algoritmos robustos, pero pocas las personas que lo entienden. Nuestra trilogía de cursos de métodos numéricos ha llegado para darle un giro de 180 grados a esta forma de trabajar y a explicarte todo lo que necesitas saber sobre algoritmos, su validez, en cuánto se equivocan y cual es el pseudocódigo de los mismos para que los puedas programar en cualquier leguaje de programación. 
 
