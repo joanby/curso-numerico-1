@@ -3,7 +3,7 @@
 ### Con Juan Gabriel Gomila y Arnau Mir
 
 
-Materiales del curso de [Métodos Numéricos con Python - Parte 1 Cálculo Numérico](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35) solamente disponible en Udemy.
+Materiales del curso de [Métodos Numéricos con Python - Parte 1 Cálculo Numérico](https://cursos.frogamesformacion.com/courses/numerico-1?coupon=github) solamente disponible en Frogames Formación.
 
 Puedes consultar todo el material complementario del curso en nuestro [Github.io](https://joanby.github.io/curso-numerico-1/).
 
