@@ -2,7 +2,7 @@
 
 ### Con Juan Gabriel Gomila y Arnau Mir
 
-Materiales complementarios del curso disponible en   [Udemy](https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35).
+Materiales complementarios del curso disponible en   [Frogames Formación]([https://www.udemy.com/course/draft/3739518/?couponCode=92A16B706AA151705D35](https://cursos.frogamesformacion.com/courses/numerico-3?coupon=github).
 
 1. [Preliminares](https://joanby.github.io/curso-numerico-1/Teoria/01Preliminares#1). 
 2. [Errores](https://joanby.github.io/curso-numerico-1/Teoria/02Errores#1)
